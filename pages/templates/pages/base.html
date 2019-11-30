@@ -1,0 +1,35 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"></link>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {% block title %}
+    <title>KAC - Main Page</title>
+    {% endblock %}
+  </head>
+  <body class="main">
+    <div class="wrapper">
+      <h1 class="title top">khottashi's arcane contraptions</h1>
+      {% block header %}
+      <h2 class="title p-header">Main page</h2>
+      {% endblock %}
+      <nav class="menu">
+	  <a class="menulink" href="{% url 'pages:index' %}">Main page</a>
+	  <a class="menulink" href="{% url 'pages:loremipsum' %}">Lorem ipsum...</a></li>
+	  <a class="menulink" href="{% url 'graphgame:game' %}">Graph game</a></li>
+	  <a class="menulink" href="{% url 'polls:index' %}">Polls</a></li>
+	</ul>
+      </nav>
+      <div class="content">
+      {% block content %}
+      <p>welcome back to nineties</p>
+      <p>this design is a tribute to web 1.0 sites created long time ago</p>
+      {% endblock %}
+      </div>
+      {% block footer %}
+      <div class="footer"><p>2019 Powered by Django<p></div>
+      {% endblock %}
+    </div>
+  </body>
+</html>

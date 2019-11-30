@@ -1,0 +1,22 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}
+<title>KAC - Graph Game</title>
+{% endblock %}
+
+{% block header %}
+<h2 class="title p-header">Graph Game</h2>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'graphgame/style.css' %}"></link>
+<form class="appwrap" id="appform" action="" method="post">
+  {% csrf_token %}
+  <canvas class="appcanvas" id="example" width="600" height="400"></canvas>
+  <script src="{% static 'graphgame/canvas.js' %}"></script>
+  Graph name: <input class="appinput" type="text" name="graph_name">
+  <input class="appinput" type="submit" name="save" value="Save">
+  <input class="appinput" type="submit" name="load" value="Load">
+</form>
+{% endblock %}
